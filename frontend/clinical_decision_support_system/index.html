@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>prescription</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<meta content="width=device-width, intitial-scale=1.0">
+​
+</head>
+<body>
+​
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"
+    integrity="sha256-srhz/t0GOrmVGZryG24MVDyFDYZpvUH2+dnJ8FbpGi0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css">
+<script src="index.js"></script>
+​
+​
+<div class="wrapper">
+    <div class="prescription_form">
+        <table class="prescription" data-prescription_id="<?php echo $presc->prescription_id; ?>" border="1">
+            <tbody>
+                <tr height="15%">
+                    <td colspan="2">
+                        <div class="header">
+                            <div class="logo">
+                                <img
+                                    src="https://seeklogo.com/images/H/hospital-clinic-plus-logo-7916383C7A-seeklogo.com.png" />
+                            </div>
+                            <div class="credentials">
+                                <h4>Patient Name</h4>
+                                <p>Patient Age</p>
+                                <small>Address</small>
+                                <br />
+                                <small>Mb. ________</small>
+                            </div>
+                        
+                            <div class="credentials">
+                                <h4>Hospital Name</h4>
+                                <p>Doctor's Name</p>
+                                
+                                <small>Address</small>
+                                <br />
+                                <small>Mb. ________</small>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="45%">
+                        <div class="desease_details">
+                            <div class="symptoms">
+                                <h4 class="d-header">Symptoms</h4>
+                                <ul id="mysympid" class="symp" data-toggle="tooltip" data-placement="bottom" title="Click to edit."
+                                    contenteditable="true">
+                                </ul>
+                                <div class="symp_action">
+                                    <button id="symp_save" data-prescription_id="<?php echo $presc->prescription_id; ?>" class="btn btn-sm btn-success save">Save</button>
+                                    <button class="btn btn-sm btn-danger cancel-btn">Cancel</button>
+                                </div>
+                                <ul class="symp" data-toggle="tooltip" data-placement="bottom" title="Click to edit."
+                                    contenteditable="true">
+                                </ul>
+                                <div class="symp_action">
+                                    <button id="symp_save" data-prescription_id="<?php echo $presc->prescription_id; ?>" class="btn btn-sm btn-success save">Save</button>
+                                    <button class="btn btn-sm btn-danger cancel-btn">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td width="40%" valign="top">
+                        <h4 class="d-header">Diagnosis</h4>
+                        <hr />
+                        <form>
+                            <h3>Disease Names</h3>
+                            <select id="myid">
+  
+                            </select>
+                            </div>
+                         </form>
+                         <span style="font-size: 3em;">R<sub>x</sub></span>
+
+                         <div class="medicine">
+                            <section class="med_list">
+                            </section>
+                            <div id="add_med" data-toggle="tooltip" data-placement="right"
+                                title="Click anywhere on the blank space to add more.">Click to add...</div>
+                        </div>
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class='tableauPlaceholder' id='viz1657942070688' style='position: relative'>
+   <noscript><a href='#'><img alt=' =Rebalance  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZD&#47;ZDRX64B5F&#47;1_rss.png' style='border: none' /></a></noscript>
+   <object class='tableauViz'  style='display:none;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='path' value='shared&#47;ZDRX64B5F' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZD&#47;ZDRX64B5F&#47;1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-GB' />
+   </object>
+</div>
+​
+<script type='text/javascript'>                    
+    var divElement = document.getElementById('viz1657942070688');                    
+    var vizElement = divElement.getElementsByTagName('object')[0];                    
+    if ( divElement.offsetWidth > 800 ) 
+        { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';} 
+    else if ( divElement.offsetWidth > 500 ) 
+        { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.5)+'px';} 
+    else { vizElement.style.width='100%';vizElement.style.height='1277px';}        
+         var scriptElement = document.createElement('script');                    
+     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+ vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+</script>
+
+<script id="new_medicine" type="text/template">
+    <div class="med">
+        &#9899; <input class="med_name" data-med_id="{{med_id}}" data-toggle="tooltip"
+            title="Click to edit..." placeholder="Enter medicine name"/>
+        <div class="med_name_action">
+            <button data-med_id="{{med_id}}" class="btn btn-sm btn-success save">Save</button>
+            <button class="btn btn-sm btn-danger cancel-btn">Cancel</button>
+        </div>
+        <div class="schedual">
+            <div class="sc_time folded">
+                <select class="sc" data-med_id="{{med_id}}">
+                  <option value="1+1+1" selected>1+1+1</option>
+                  <option value="1+0+1">1+0+1</option>
+                  <option value="0+1+1">1+1+1</option>
+                  <option value="1+0+0">1+1+1</option>
+                  <option value="0+0+1">1+1+1</option>
+                  <option value="1+1+1+1">1+1+1+1</option>
+                </select>
+                <div class="med_when_action">
+                    <button data-med_id="{{med_id}}"
+                        class="btn btn-sm btn-success save">&check;</button>
+                </div>
+            </div>
+            <div class="taking_time select folded">
+                <select class="meal" data-med_id="{{med_id}}">
+                    <option value="1" selected>After Meal</option>
+                    <option value="2">Before Meal</option>
+                    <option value="3">Take any time</option>
+                </select>
+                <div class="med_meal_action">
+                    <button data-med_id="{{med_id}}"
+                        class="btn btn-sm btn-success save">&check;</button>
+                </div>
+            </div>
+        </div>
+        <div class="med_footer">
+            <div class="period folded">
+                Take for <input class="med_period" type="text" data-med_id="{{med_id}}"
+                    placeholder="? days/weeks..." />
+                <div class="med_period_action">
+                    <button data-med_id="{{med_id}}"
+                        class="btn btn-sm btn-success save">&check;</button>
+                </div>
+                <span class="date"></span>
+            </div>
+            <div class="del_action">
+                <button data-med_id="{{med_id}}" class="btn btn-sm btn-danger delete"><i class="fa fa-trash"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <hr />
+    </div>
+</script>
+
+<script defer type="text/javascript">
+
+
+// let elements = ["hey", "you", "are", "beautiful"]
+// console.log(elements);
+
+window.onload = async function() {
+response = await fetch('http://localhost:5000/icd10-codes');
+elements = await response.json();
+// console.log(myJson);
+
+let select = document.querySelector("#myid")
+
+for (let elt of elements){
+  let option = document.createElement("option");
+  option.text = elt;
+  option.value = elt;
+  select.appendChild(option);
+}
+
+
+response = await fetch('http://localhost:5000/latest-symptoms');
+elements = await response.json();
+
+for (let elt of elements){
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(elt));
+  $("#mysympid").append(li);
+}
+
+};
+</script>
+
+</body>
+</html>
+​
